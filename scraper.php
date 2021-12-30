@@ -34,6 +34,8 @@ $client = new Client([
     'verify'  => false
 ]);
 
+echo "Start - " . date('Y-m-d H:i:s') . "\n";
+
 foreach ($sources as $sourceName => $source) {
     $nextUrl = $source;
     $nextUrlSegments = parse_url($nextUrl);
@@ -119,9 +121,6 @@ foreach ($sources as $sourceName => $source) {
         if ($pageCount % 5 === 0) {
             sleep(3);
         }
-        //if ($pageCount == 0) {
-        //    break;
-        //}
 
         $pageCount++;
 

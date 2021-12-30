@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron:  '15 9 * * *' # every day at 9:15am
+    - cron:  '15 7 * * *' # every day at 7:15am UTC
   workflow_dispatch:
 name: Run scraper
 jobs:
