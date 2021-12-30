@@ -16,5 +16,5 @@ jobs:
       run: php scraper.php
     - name: Commit new files
       uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # set automatically by Github
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # set automatically by Github
