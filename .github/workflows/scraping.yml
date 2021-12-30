@@ -1,0 +1,20 @@
+on:
+  schedule:
+    - cron:  '15 9 * * *' # every day at 9:15am
+  workflow_dispatch:
+name: Run scraper
+jobs:
+  build:
+    name: Build and scrape
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@master
+    - name: Install dependencies
+      uses: php-actions/composer@v6
+    - name: Run the scraper
+      run: php scraper.php
+    - name: Commit new files
+      uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # set automatically by Github
